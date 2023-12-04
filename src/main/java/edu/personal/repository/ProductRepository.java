@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin("http://localhost:4200") //Accept calls from web browser scripts for the origin
 public interface ProductRepository extends JpaRepository<Product, Long> {
-    //THis is a query method
+    //This is a query method
     //SELECT * FROM product where category_id = ?
     //Spring Data REST -> api/products/search/findByCategoryId?id=2
     Page<Product> findByCategoryId(@Param("id") Long id, Pageable pageable);
