@@ -13,4 +13,5 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     //SELECT * FROM product where category_id = ?
     //Spring Data REST -> api/products/search/findByCategoryId?id=2
     Page<Product> findByCategoryId(@Param("id") Long id, Pageable pageable);
+    Page<Product> findByNameContaining(@Param("name") String name, Pageable pageable);
 }
